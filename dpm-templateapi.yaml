@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: templateapi
+  namespace: dpm
+  labels:
+    app: templateapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: templateapi
+  template:
+    metadata:
+      labels:
+        app: templateapi
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: templateapi
+          image: registry.vimuens.nl/template-api:1.0.0 # {"$imagepolicy": "flux-system:template-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9090"
+          ports:
+            - containerPort: 8082
