@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authapi
+  namespace: dpm
+  labels:
+    app: authapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authapi
+  template:
+    metadata:
+      labels:
+        app: authapi
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: authapi
+          image: registry.vimuens.nl/dpm-authentication:1.0.1 # {"$imagepolicy": "flux-system:auth-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9090"
+          ports:
+            - containerPort: 8082
