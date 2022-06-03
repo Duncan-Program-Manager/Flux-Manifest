@@ -17,11 +17,16 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      - name: userservice
-        image: registry.vimuens.nl/user-api:1.0.4 # {"$imagepolicy": "flux-system:user-api-policy"}
-        imagePullPolicy: Always
-        env:
-        - name: server.port
-          value: "9090"
-        ports:
-        - containerPort: 8082
+        - name: userservice
+          image: registry.vimuens.nl/user-api:1.0.4 # {"$imagepolicy": "flux-system:user-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9090"
+          ports:
+            - containerPort: 8082
+          resources:
+            requests:
+              cpu: "150m"
+            limits:
+              cpu: "400m"
