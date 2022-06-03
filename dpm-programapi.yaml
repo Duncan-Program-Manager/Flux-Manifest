@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: programapi
+  namespace: dpm
+  labels:
+    app: programapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: programapi
+  template:
+    metadata:
+      labels:
+        app: programapi
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: programapi
+          image: registry.vimuens.nl/program-api:1.0.1 # {"$imagepolicy": "flux-system:program-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9090"
+          ports:
+            - containerPort: 8082
