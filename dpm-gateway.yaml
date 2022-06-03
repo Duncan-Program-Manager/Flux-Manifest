@@ -17,11 +17,11 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-        - name: gateway
-          image: registry.vimuens.nl/dpm-gateway:1.0.0 # {"$imagepolicy": "flux-system:gateway-api-policy"}
-          imagePullPolicy: Always
-          env:
-            - name: server.port
-              value: "9090"
-          ports:
-            - containerPort: 8082
+      - name: gateway
+        image: registry.vimuens.nl/dpm-gateway:1.0.1 # {"$imagepolicy": "flux-system:gateway-api-policy"}
+        imagePullPolicy: Always
+        env:
+        - name: server.port
+          value: "9090"
+        ports:
+        - containerPort: 8082
