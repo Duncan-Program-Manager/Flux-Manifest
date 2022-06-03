@@ -17,11 +17,11 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-        - name: virusscannerservice
-          image: registry.vimuens.nl/virusscanner-api:1.0.0 # {"$imagepolicy": "flux-system:virusscanner-api-policy"}
-          imagePullPolicy: Always
-          env:
-            - name: server.port
-              value: "9090"
-          ports:
-            - containerPort: 8082
+      - name: virusscannerservice
+        image: registry.vimuens.nl/virusscanner-api:1.0.1 # {"$imagepolicy": "flux-system:virusscanner-api-policy"}
+        imagePullPolicy: Always
+        env:
+        - name: server.port
+          value: "9090"
+        ports:
+        - containerPort: 8082
