@@ -17,17 +17,17 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-        - name: gateway
-          image: registry.vimuens.nl/dpm-gateway:1.0.1 # {"$imagepolicy": "flux-system:gateway-api-policy"}
-          imagePullPolicy: Always
-          env:
-            - name: server.port
-              value: "9090"
-            - name: spring.cloud.kubernetes.discovery.enabled
-              value: "true"
-            - name: spring.cloud.kubernetes.reload.enabled
-              value: "true"
-            - name: spring.cloud.kubernetes.discovery.locator.enabled
-              value: "true"
-          ports:
-            - containerPort: 8082
+      - name: gateway
+        image: registry.vimuens.nl/dpm-gateway:1.0.2 # {"$imagepolicy": "flux-system:gateway-api-policy"}
+        imagePullPolicy: Always
+        env:
+        - name: server.port
+          value: "9090"
+        - name: spring.cloud.kubernetes.discovery.enabled
+          value: "true"
+        - name: spring.cloud.kubernetes.reload.enabled
+          value: "true"
+        - name: spring.cloud.kubernetes.discovery.locator.enabled
+          value: "true"
+        ports:
+        - containerPort: 8082
