@@ -17,11 +17,11 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      - name: authapi
-        image: registry.vimuens.nl/dpm-authentication:1.0.2 # {"$imagepolicy": "flux-system:auth-api-policy"}
-        imagePullPolicy: Always
-        env:
-        - name: server.port
-          value: "9090"
-        ports:
-        - containerPort: 8082
+        - name: authapi
+          image: registry.vimuens.nl/dpm-authentication:1.0.2 # {"$imagepolicy": "flux-system:auth-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9094"
+          ports:
+            - containerPort: 8082

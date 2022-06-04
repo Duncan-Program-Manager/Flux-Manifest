@@ -17,11 +17,11 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      - name: programapi
-        image: registry.vimuens.nl/program-api:1.0.2 # {"$imagepolicy": "flux-system:program-api-policy"}
-        imagePullPolicy: Always
-        env:
-        - name: server.port
-          value: "9090"
-        ports:
-        - containerPort: 8082
+        - name: programapi
+          image: registry.vimuens.nl/program-api:1.0.2 # {"$imagepolicy": "flux-system:program-api-policy"}
+          imagePullPolicy: Always
+          env:
+            - name: server.port
+              value: "9093"
+          ports:
+            - containerPort: 8086
