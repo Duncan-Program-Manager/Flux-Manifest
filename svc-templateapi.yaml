@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: templateapi
+  namespace: dpm
+spec:
+  selector:
+    app: templateapi
+  ports:
+    - protocol: TCP
+      port: 8088
+      targetPort: 9098
