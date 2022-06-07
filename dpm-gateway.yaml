@@ -18,7 +18,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: gateway
-        image: registry.vimuens.nl/dpm-gateway:1.0.6 # {"$imagepolicy": "flux-system:gateway-api-policy"}
+        image: registry.vimuens.nl/dpm-gateway:1.0.7 # {"$imagepolicy": "flux-system:gateway-api-policy"}
         imagePullPolicy: Always
         env:
         - name: server.port
