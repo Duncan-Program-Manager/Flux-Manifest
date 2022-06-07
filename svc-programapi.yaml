@@ -8,5 +8,5 @@ spec:
     app: programapi
   ports:
     - protocol: TCP
-      port: 8086
-      targetPort: 9096
+      port: 8085
+      targetPort: 9094

@@ -8,5 +8,5 @@ spec:
     app: virusscannerservice
   ports:
     - protocol: TCP
-      port: 8085
+      port: 8086
       targetPort: 9095

@@ -22,9 +22,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: server.port
-              value: "9091"
+              value: "9092"
           ports:
-            - containerPort: 8082
+            - containerPort: 8083
           resources:
             requests:
               cpu: "250m"

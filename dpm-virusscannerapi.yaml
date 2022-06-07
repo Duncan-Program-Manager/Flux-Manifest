@@ -24,4 +24,4 @@ spec:
             - name: server.port
               value: "9095"
           ports:
-            - containerPort: 8082
+            - containerPort: 8086

@@ -8,7 +8,7 @@ spec:
     app: gateway
   ports:
     - protocol: TCP
-      port: 8082
+      port: 8081
       targetPort: 9090
       nodePort: 31235
   type: NodePort
