@@ -18,7 +18,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: templateapi
-        image: registry.vimuens.nl/template-api:1.0.4 # {"$imagepolicy": "flux-system:template-api-policy"}
+        image: registry.vimuens.nl/template-api:1.0.5 # {"$imagepolicy": "flux-system:template-api-policy"}
         imagePullPolicy: Always
         env:
         - name: server.port
