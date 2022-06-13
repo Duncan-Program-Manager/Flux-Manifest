@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: virusscannerhpa
+  namespace: dpm
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: virusscannerservice
+  maxReplicas: 5
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 70
